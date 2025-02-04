@@ -1,0 +1,32 @@
+Comments (comments.txt):
+
+Chain 1 (Violation Chain):
+The seller initiates off-platform communication by mentioning WhatsApp, provides a phone number, and agrees to move discussion and file exchange outside of Fiverr.
+
+Chain 2 (Violation Chain):
+The seller offers an off-platform discount by suggesting direct bank transfer for payment, provides bank details, and agrees to discuss updates via email.
+
+Chain 3 (Violation Chain):
+The seller offers to share an external LinkedIn portfolio link and confirms using LinkedIn for urgent requests, moving the conversation away from Fiverr.
+
+Chain 4 (Violation Chain):
+The seller recommends off-platform file sharing by suggesting the use of Dropbox, and later agrees to communicate via Skype for faster updates.
+
+Chain 5 (Violation Chain):
+The seller suggests off-platform payment via PayPal (offering a discount), shares the PayPal email, and provides a WhatsApp number for updates.
+
+Chain 6 (Non-Violation Chain):
+The seller consistently keeps all communications and file exchanges on Fiverr. Even when the buyer hints at external apps, the seller declines and maintains platform security.
+
+Chain 7 (Non-Violation Chain):
+The seller declines any off-platform communication suggestions. All discussions and payments are kept strictly within Fiverr.
+
+Chain 8 (Non-Violation Chain):
+Despite the buyer’s mention of other apps for communication, the seller insists on using only Fiverr’s messaging system, ensuring all processes remain on-platform.
+
+Chain 9 (Non-Violation Chain):
+The seller ensures transparency by keeping communication and file transfers on Fiverr, and declines any external suggestions by the buyer.
+
+Chain 10 (Non-Violation Chain):
+The seller adheres strictly to Fiverr’s guidelines, maintaining all communication, file sharing, and payment processes on the platform.
+

@@ -1,0 +1,35 @@
+name: Run Python Scripts
+
+on:
+  push:  # Trigger workflow on push
+    branches:
+      - main  # Change if you want to trigger on a different branch
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest  # Use Ubuntu as the runner
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Checks out your code
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || echo "No requirements.txt found"
+
+      - name: Run first script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python data_classifier.py  
+             cat results_dict.txt
+
+      - name: Run second script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python image_classifier.py
+             cat image_results_dict.txt
