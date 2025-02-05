@@ -136,10 +136,16 @@ class PolicyChecker:
 
                 For the chat provided and the value of X = {conv_id}, do the following:
                 
-                Identify if there is a violation based on the TOS.
-                If a violation exists, label it as: "Chain X (Violation Chain):" followed by a clear explanation of the breach.
-                If no violation exists, label it as: "Chain X (Non Violation Chain):" followed by a brief statement confirming compliance with the TOS.
-                Please separate label from reason with \n
+                1. Identify if there is a violation based on the TOS.
+                2. If a violation exists, please use this exactly format:
+                   "Chain X (Violation Chain):  
+
+                    [Explanation of the violation]"
+                3. If no violation exists, please use this exactly format:
+                    "Chain X (Non Violation Chain):  
+
+                    [Confirmation of compliance with the TOS]"
+
                 Ensure the response is concise and directly tied to the TOS but only effect the seller .
                 please don't add any more data then i requested, no header and no footer.
                 Chat: {conversation_str}
