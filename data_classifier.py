@@ -1,6 +1,5 @@
 import json
 import os
-
 import openai
 import time
 from pathlib import Path
@@ -10,15 +9,16 @@ import logging
 import colorama
 from colorama import Fore, Style
 
-
 # Initialize colorama for Windows support
 colorama.init()
+
 
 # Create a custom formatter with white color
 class ColoredFormatter(logging.Formatter):
     def format(self, record):
         # Set white color for the message
         return f"{Fore.WHITE}{super().format(record)}{Style.RESET_ALL}"
+
 
 # Configure logging with the custom formatter
 logger = logging.getLogger(__name__)
@@ -34,6 +34,7 @@ console_handler.setFormatter(formatter)
 logger.handlers = []
 logger.addHandler(console_handler)
 
+
 @dataclass
 class Config:
     """Configuration settings for the policy checker."""
@@ -42,9 +43,11 @@ class Config:
     poll_interval: int = 2
     encoding: str = "utf-8"
 
+
 # Configuration
 config = Config(
-        api_key=os.getenv('OPEN_API_KEY'))
+    api_key=os.getenv('OPEN_API_KEY'))
+
 
 class PolicyChecker:
     def __init__(self, config: Config):
@@ -127,16 +130,20 @@ class PolicyChecker:
         # Convert list to string if necessary
         conversation_str = json.dumps(conversation) if isinstance(conversation, list) else conversation
 
+
         prompt = f"""
-        Please point out the violation of this conversation, based on the rules file attached to this conversation.
-        Conversation = {conversation_str}
-        Please also determine if there is a clear violation, potential violation or no violation.
-        please use the following format:
-        "The decision: violation/ no violation"
-        "The violated rules taken from primary file: THE RULES HERE."
-        "Conversation = CONVERSATION HERE"
-        
-        """
+                I have a Terms of Service (TOS) document (tos.txt) attached. I need to analyze chat logs to determine if they violate the TOS.
+
+                For the chat provided and the value of X = {conv_id}, do the following:
+                
+                Identify if there is a violation based on the TOS.
+                If a violation exists, label it as: "Chain X (Violation Chain):" followed by a clear explanation of the breach.
+                If no violation exists, label it as: "Chain X (Non Violation Chain):" followed by a brief statement confirming compliance with the TOS.
+                separate label from reason by \n
+                Ensure the response is concise and directly tied to the TOS.
+                please don't add any more data then i requested, no header and no footer.
+                Chat: {conversation_str}
+                """
 
         try:
             # Create thread
@@ -178,17 +185,16 @@ class PolicyChecker:
         """Save results to a file."""
         try:
             with open(output_file, 'w', encoding=self.config.encoding) as f:
+                f.write("Comments (comments.txt):")
                 for conversation, response in self.results.items():
-                    f.write(f"Conversation:\r{conversation}\n\n")
-                    f.write(f"Response:\n{response}\n")
-                    f.write("-" * 80 + "\n\n")
+                    f.write(f"{response}\n")
+                  
             logger.info(f"Results saved to {output_file}")
         except IOError as e:
             logger.error(f"Error saving results: {e}")
 
 
 def main():
-
     # Initialize paths
     base_path = Path("home_assign/home_assign")
     chat_file = base_path / "chat_chains.json"
@@ -212,8 +218,8 @@ def main():
     conv_id = 0
 
     for conversation in conversations:
-        conv_id +=1
-        checker.check_policy_violation(conversation,conv_id)
+        conv_id += 1
+        checker.check_policy_violation(conversation, conv_id)
 
     checker.save_results(output_file)
 

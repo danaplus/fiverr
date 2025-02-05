@@ -1,0 +1,15 @@
+ [
+    [
+        {"role": "buyer", "content": "Hello, I'm interested in your logo design gig."},
+        {"role": "seller", "content": "Hi there! For quicker responses, I sometimes use WhatsApp to chat."},
+        {"role": "buyer", "content": "That sounds good. Can I have your WhatsApp number?"},
+        {"role": "seller", "content": "Sure, my number is 123-456-7890."},
+        {"role": "buyer", "content": "Great, I'll message you there."},
+        {"role": "seller", "content": "I'll be waiting for your message off Fiverr."},
+        {"role": "buyer", "content": "Also, can we discuss some project details on WhatsApp?"},
+        {"role": "seller", "content": "Absolutely, we can finalize details there."},
+        {"role": "buyer", "content": "Perfect, I'll send the files via email as well."},
+        {"role": "seller", "content": "That works for me."}
+    ]
+
+]
