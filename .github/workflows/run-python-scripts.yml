@@ -22,14 +22,16 @@ jobs:
         run: |
           pip install -r requirements.txt 
 
-      - name: Run first script
+      - name: Run Data Classifier
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python data_classifier.py  
              cat results_dict.txt
 
-      - name: Run second script
+      - name: Run Image Classifier
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python image_classifier.py
-             cat image_results_dict.txt
+        
+      - name: Print results
+        run: cat results_dict.txt cat image_results_dict.txt
