@@ -139,8 +139,8 @@ class PolicyChecker:
                 Identify if there is a violation based on the TOS.
                 If a violation exists, label it as: "Chain X (Violation Chain):" followed by a clear explanation of the breach.
                 If no violation exists, label it as: "Chain X (Non Violation Chain):" followed by a brief statement confirming compliance with the TOS.
-                separate label from reason with \n
-                Ensure the response is concise and directly tied to the TOS.
+                Please separate label from reason with \n
+                Ensure the response is concise and directly tied to the TOS but only effect the seller .
                 please don't add any more data then i requested, no header and no footer.
                 Chat: {conversation_str}
                 """
