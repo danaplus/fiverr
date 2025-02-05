@@ -139,7 +139,7 @@ class PolicyChecker:
                 Identify if there is a violation based on the TOS.
                 If a violation exists, label it as: "Chain X (Violation Chain):" followed by a clear explanation of the breach.
                 If no violation exists, label it as: "Chain X (Non Violation Chain):" followed by a brief statement confirming compliance with the TOS.
-                separate label from reason by \n
+                separate label from reason with \n
                 Ensure the response is concise and directly tied to the TOS.
                 please don't add any more data then i requested, no header and no footer.
                 Chat: {conversation_str}
@@ -185,10 +185,10 @@ class PolicyChecker:
         """Save results to a file."""
         try:
             with open(output_file, 'w', encoding=self.config.encoding) as f:
-                f.write("Comments (comments.txt):")
+                f.write("Comments (comments.txt):\n\n")
                 for conversation, response in self.results.items():
-                    f.write(f"{response}\n")
-                  
+                    f.write(f"{response}\n\n")
+
             logger.info(f"Results saved to {output_file}")
         except IOError as e:
             logger.error(f"Error saving results: {e}")
