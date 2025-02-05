@@ -113,11 +113,11 @@ def main():
     image_id = 0
 
 
-    image_urls = ["https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Graphic_Violence.jpg"
-    ,"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Huskiesatrest.jpg"
-    ,"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"
-    ,"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Panorámica_Otoño_Alcázar_de_Segovia.jpg"
-    ,r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/images (2).jpg"]
+    image_urls = [r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Graphic_Violence.jpg"
+    ,r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Huskiesatrest.jpg"
+    ,r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg"
+    ,r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/Panorámica_Otoño_Alcázar_de_Segovia.jpg"
+    ,r"https://s3.us-east-1.amazonaws.com/www.danaeder.com/images/images(2).jpg"]
 
     for image in image_urls:
         image_id += 1
